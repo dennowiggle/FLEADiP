@@ -1,0 +1,59 @@
+
+# FLEADiP.kicad_sch
+
+## 7/9/2023 3:29:13 PM
+
+## Eeschema 7.0.2
+
+## Component Count:224
+
+Ref | Qty | Value | Digikey | Datasheet | Description
+----|-----|-------|---------|-----------|------------
+C201, C204, C205, C206, C208, C209, C211, C212, C213, C214, C301, C302, C303, C304, C305, C306, C308, C403, C404, C407, C408, C409, C410, C411, C412, C413, C414, C415, C422, C423, C424, C425, C426, C427, C428, C429, C430, C431, C432, C435, C437, C438, C439, C440, C441, C501, C502, C601, C602, C701, C703, C705, C706, C707, C708, C709, C710, C711, C712, C713, C802, C803, C900 | 63 | 100nF | 311-1088-1-ND | https://www.yageo.com/upload/media/product/productsearch/datasheet/mlcc/UPY-GPHC_X7R_6.3V-to-250V_22.pdf | Unpolarized capacitor, small symbol
+C202, C203, C207, C210, C215, C216, C307, C309, C401, C402, C405, C406, C421, C433, C434, C436, C603, C702, C704, C804 | 20 | 10uF | 311-1782-1-ND | https://www.yageo.com/upload/media/product/productsearch/datasheet/mlcc/UPY-GPHC_X5R_4V-to-50V_26.pdf | Unpolarized capacitor, small symbol
+C416, C417, C420 | 3 | 10uF | 1276-6455-1-ND | https://media.digikey.com/pdf/Data%20Sheets/Samsung%20PDFs/CL21A106KOQNNNG_Spec.pdf | Unpolarized capacitor, small symbol
+C418, C419 | 2 | 100nF | 732-8045-1-ND | https://www.we-online.com/katalog/datasheet/885012207045.pdf | Unpolarized capacitor, small symbol
+C801 | 1 | 1nF | 709-VPDD202W102K1GV001ECT-ND | https://www.johansondielectrics.com/downloads/catalog/johanson-dielectrics-product-catalog.pdf | Unpolarized capacitor, small symbol
+D501, D502, D503 | 3 | LTST-C191KRKT | 160-1443-1-ND | http://optoelectronics.liteon.com/upload/download/DS22-2000-223/LTST-C191KRKT.PDF | LED RED CLEAR SMD
+FB401, FB402, FB403, FB404, FB601 | 5 | BLM18AG601SN1D | 490-1014-1-ND | https://www.murata.com/en-us/products/productdata/8796738650142/ENFA0003.pdf | FERRITE BEAD 600 OHM 0603 1LN
+H1, H2, H3, H4 | 4 | MountingHole |  | ~ | Mounting Hole without connection
+J2 | 1 | Conn_02x20_Counter_Clockwise |  | https://www.amazon.com/gp/product/B084Q4W1PW/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1 | Generic connector, double row, 02x20, counter clockwise pin numbering scheme (similar to DIP package numbering), script generated (kicad-library-utils/schlib/autogen/connector/)
+J101, J102 | 2 | Conn_01x01 |  | ~ | Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)
+J202 | 1 | Conn_01x03 | 2057-PH1-03-UA-ND | https://app.adam-tech.com/products/download/data_sheet/201605/ph1-xx-ua-data-sheet.pdf | Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)
+J301, J304, J305, J900 | 4 | Conn_01x02 | 2057-PH1-02-UA-ND | https://app.adam-tech.com/products/download/data_sheet/201605/ph1-xx-ua-data-sheet.pdf | Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)
+J302 | 1 | DB9_Male_MountingHoles | AE10970-ND | http://www.assmann-wsw.com/uploads/datasheets/ASS_4888_CO.pdf | 
+J303, J306 | 2 | Conn_02x05 | 1849-1002-ND | ~ | Generic connector, double row, 02x05, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)
+J308 | 1 | Conn_02x10_Odd_Even | 2057-PH2-20-UA-ND | https://app.adam-tech.com/products/download/data_sheet/202065/ph2-xx-ua-data-sheet.pdf | Generic connector, double row, 02x10, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)
+J501 | 1 | Conn_02x03 | 2057-PH2-06-UA-ND | https://app.adam-tech.com/products/download/data_sheet/202065/ph2-xx-ua-data-sheet.pdf | Generic connector, double row, 02x03, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)
+J503 | 1 | Conn_02x05_Right_Angle | 2057-PH2RA-10-UA-ND | https://app.adam-tech.com/products/download/data_sheet/200508/ph2ra-xx-ua-data-sheet.pdf | Generic connector, double row, 02x05, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)
+J701 | 1 | HDMI_A_1.4 | 609-4614-1-ND | https://www.amphenol-cs.com/media/wysiwyg/files/drawing/10029449.pdf | HDMI 1.4+ type A connector
+J801 | 1 | ICD15S13E4GX00LF | 609-5181-ND | https://cdn.amphenol-cs.com/media/wysiwyg/files/drawing/c-cd-0012.pdf | 15-pin female receptacle socket D-SUB connector, High density (3 columns), Triple Row, Generic, VGA-connector, Mounting Hole
+Q201, Q501, Q502, Q503 | 4 | MMUN2211LT1G | MMUN2211LT1GOSCT-ND | http://www.onsemi.com/pub/Collateral/DTC114E-D.PDF | TRANS PREBIAS NPN 246MW SOT23-3
+R201, R202, R302, R303, R304, R305, R306, R307, R308, R309, R310, R311, R312, R313, R314, R315, R316, R317, R318, R319, R320, R321, R322, R323, R324, R325, R326, R327, R328, R504, R505, R506, R507, R508, R509, R510, R511, R513, R514, R515, R517, R518, R519, R520, R521, R522, R523, R602, R701, R702, R703, R708, R709 | 53 | 10K | 311-10KGRCT-ND | https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_12.pdf | Resistor, US symbol
+R301, R329 | 2 | 100R | 2019-RK73H2BTTD1000FCT-ND | https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_12.pdf | Resistor, US symbol
+R501, R502, R503, R516 | 4 | 1K | 311-1.00KHRCT-ND | https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_12.pdf | Resistor, US symbol
+R512 | 1 | 0R | 311-0.0ARCT-ND | https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_12.pdf | Resistor, US symbol
+R601, R705 | 2 | 33R | 13-RC0603FR-0733RLCT-ND | https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_12.pdf | Resistor, US symbol
+R704, R706 | 2 | 12K4 | 311-12.4KHRCT-ND | https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_12.pdf | Resistor, US symbol
+R707 | 1 | DNL | 311-0.0ARCT-ND | https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_12.pdf | Resistor, US symbol
+R710 | 1 | 2K7 | 311-2.7KARCT-ND | https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_12.pdf | Resistor, US symbol
+R801 | 1 | 1M | 311-1.0MERCT-ND | https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_12.pdf | Resistor, US symbol
+R802, R806, R810 | 3 | 4K02 | 311-4.02KHRCT-ND | https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_12.pdf | Resistor, US symbol
+R803, R807, R811 | 3 | 2K00 | 311-2.00KHRCT-ND | https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_12.pdf | Resistor, US symbol
+R804, R808, R812 | 3 | 1K00 | 311-1.00KHRCT-ND | https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_12.pdf | Resistor, US symbol
+R805, R809, R813 | 3 | 499R | RC0603FR-07499RL | https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_12.pdf | Resistor, US symbol
+R814, R815 | 2 | 100R | 311-100HRCT-ND | https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_12.pdf | Resistor, US symbol
+SW301 | 1 | SW_DIP_x08 | CT2068ST-ND | https://www.ctscorp.com/wp-content/uploads/206.pdf | 8x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol
+U1 | 1 | T20Q144C3 | 2134-T20Q144C3-ND | https://www.efinixinc.com/support/docsdl.php?s=ef&pn=DST20 | IC FPGA TRION T20 144QFP
+U201, U203 | 2 | SN74LVC1G125DBVR | 296-11603-1-ND | http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fsn74lvc1g125 | IC BUF NON-INVERT 5.5V SOT23-5
+U202, U204, U205, U206, U301, U302, U303, U801, U802 | 9 | SN74LVC8T245DBR | 296-21065-1-ND | https://www.ti.com/lit/ds/symlink/sn74lvc8t245.pdf | Octal BUS Transceivers, 3-State outputs
+U401 | 1 | TLV1117LV33DCYR | 296-28778-1-ND | https://www.onsemi.com/pdf/datasheet/ncp1117lp-d.pdf | IC REG LINEAR 3.3V 1A SOT223
+U402 | 1 | TLV1117LV12DCYR | 296-28776-1-ND | https://www.ti.com/lit/gpn/TLV1117LV | IC REG LINEAR 3.3V 1A SOT223
+U501 | 1 | SN74LVC1G08DBVR | 296-11601-1-ND | http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fsn74lvc1g08 | IC GATE AND 1CH 2-INP SOT23-5
+U502 | 1 | W25Q32JVSS | W25Q32JVSSIQCT-ND | http://www.winbond.com/resource-files/w25q32jv%20revg%2003272018%20plus.pdf | 32Mb Serial Flash Memory, Standard/Dual/Quad SPI, SOIC-8
+U701 | 1 | PTN3366BSMP | 568-13387-1-ND | https://www.nxp.com/docs/en/data-sheet/PTN3366.pdf | IC VIDEO LEVEL SHIFTER 32HVQFN
+U702, U703 | 2 | RCLAMP0524P | RCLAMP0524PCT-ND | https://semtech.my.salesforce.com/sfc/p/E0000000JelG/a/440000001MK2/k1amoKEAHshbxcc58ZeFJEDBUGCuP_6DIpLB6XG33.E | 
+X601 | 1 | ECS-2333-500-BN-TR | XC1930CT-ND | https://ecsxtal.com/store/pdf/ecs-2325-2333.pdf | HCMOS Crystal Clock Oscillator, 2.5x2.0 mm SMD
+Z701 | 1 | TVS_SMAJ5.0A | SMAJ5.0ALFCT-ND | https://www.littelfuse.com/~/media/electronics/datasheets/tvs_diodes/littelfuse_tvs_diode_smaj_datasheet.pdf | TVS DIODE 5VWM 9.2VC DO214AA
+
+    
