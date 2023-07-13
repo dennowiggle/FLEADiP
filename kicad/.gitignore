@@ -39,4 +39,9 @@ empty.kicad_wks
 # Other types of files
 output/T20Q144*
 output/devices/
-
+mdBom.py
+output/FLEADiP_V0_AllegroNetlist.txt
+traceLength.py
+allegro_netlist.py
+gerbers/
+output/FLEADiP_V0_AllegroNetlist.txt
