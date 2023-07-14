@@ -88,7 +88,7 @@ architecture rtl of wtm_dpram16k is
   
 begin
 
-    MEMORY_1_PROC : process(clock)
+    MEMORY_PROC : process(clock)
     begin
         if rising_edge(clock) then
             -- Splitting code into two 8K blocks on address bit 13  
