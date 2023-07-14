@@ -6,6 +6,8 @@
 -- *    Copyright (C) 2023 Denno Wiggle
 -- *
 -- *    This is an inferred 16kByte dual port ram for the f18a FPGA logic.
+-- *    It has the capability to initialise the Ram from a text file that has
+-- *    a one byte hex value per line.
 -- * 
 -- *    The Effinity tool has a bug that it will only infer 8Kx8 of memory 
 -- *    otherwise it fails to synthesize with :
@@ -37,24 +39,53 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
+use std.textio.all;
 
 entity wtm_dpram16k is
+    generic(
+        data_width      : natural := 8;
+        address_width   : natural := 14;
+        ram_depth       : natural := 2**address_width;
+        ram_file_name   : string := "init/16KRamInitF18aScreen.txt"
+    );
     port (
         clock       : in  std_logic;
         write_en    : in  std_logic;
-        address1    : in  std_logic_vector(13 downto 0);
-        address2    : in  std_logic_vector(13 downto 0);
-        data_in     : in  std_logic_vector(7 downto 0);
-        data1_out   : out std_logic_vector(7 downto 0);
-        data2_out   : out std_logic_vector(7 downto 0)
+        address1    : in  std_logic_vector(address_width - 1 downto 0);
+        address2    : in  std_logic_vector(address_width - 1 downto 0);
+        data_in     : in  std_logic_vector(data_width - 1 downto 0);
+        data1_out   : out std_logic_vector(data_width - 1 downto 0);
+        data2_out   : out std_logic_vector(data_width - 1 downto 0)
     );
+
 end wtm_dpram16k;
 
 architecture rtl of wtm_dpram16k is
-
-    type   ram_type is array (16383 downto 0) of std_logic_vector (7 downto 0);          
-    signal ram_memory : ram_type;
-
+  
+    type ram_type is array (ram_depth - 1 downto 0) of std_logic_vector(data_width - 1 downto 0);
+  
+    -- Function to initialise the Ram with hex values from a text file.
+    -- Reguires one byte hex value per line in the text file.
+    impure function init_ram_hex return ram_type is
+        file text_file : text open read_mode is ram_file_name;
+        variable text_line : line;
+        variable ram_content : ram_type;
+    begin
+        for i in 0 to ram_depth - 1 loop
+            if ram_file_name = "" then
+                ram_content(i) := (others => '0');
+            else 
+                readline(text_file, text_line);
+                hread(text_line, ram_content(i));
+            end if;
+        end loop;
+  
+        return ram_content;
+    end function;
+  
+    -- Initialize RAM from hex values in ASCII file
+    signal ram_memory : ram_type := init_ram_hex;
+  
 begin
 
     MEMORY_1_PROC : process(clock)
