@@ -10,7 +10,7 @@ This project is an FPGA Logic Engine And Display Processor add-on board that fit
 ## Bottom View
 ![FLEADiP Bottom View Board Image](output/FLEADip_V0_3d_Bottom.jpg "Bottom View of FPGA Logic Engine And Video Processor")
 
-## FLEADiP Board Rev 0.0 Releaae Notes
+## FLEADiP Board Rev 0.0 Release Notes
 
 1. The 'output' directory contains the BOM, netlist, and PDF schematic.
 
@@ -25,7 +25,7 @@ This project is an FPGA Logic Engine And Display Processor add-on board that fit
 
 5. J503 2x5 right-angle programming connector should be installed on the top side of the board.
    - The silkscreen is marked on the back side, opposite to where the connector should be installed on.
-   - The Top Side View image shows a vertical connector installed when it is in fact a right-angle one.
+   - The Bottom Side View image shows a vertical receptacle connector installed when it is in fact a right-angle header on the Top Side.
 
 7. To program an image to the FPGA FLASH you can use a FT232H module with the Efinity FPGA SW tool programmer. 
    - I tested a $12 one from Amazon  https://www.amazon.com/dp/B09XTF7C1P:
