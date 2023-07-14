@@ -46,7 +46,7 @@ entity wtm_dpram16k is
         data_width      : natural := 8;
         address_width   : natural := 14;
         ram_depth       : natural := 2**address_width;
-        ram_file_name   : string := "init/16KRamInitF18aScreen.txt"
+        ram_file_name   : string := "init/16KRamZero.txt"
     );
     port (
         clock       : in  std_logic;
