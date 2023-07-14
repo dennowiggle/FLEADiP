@@ -6,7 +6,7 @@ This project is an FPGA Logic Engine And Display Processor add-on board that fit
 
 It has VGA, HDMI, two Atari 2600 compatible joystick ports, and user I/O expansion pin headers. 
 
-![FLEADiP Board Image](kicad/output/FLEADip_V0_3d_Angle.jpg "FPGA Logic Engine And Video Processor") board.
+![FLEADiP Board Image](kicad/output/FLEADip_V0_3d_Angle.jpg "FPGA Logic Engine And Video Processor")
 
 ## Board design 
 The board design is based around an Efinix Trion T20 FPGA in a QFP144 package. The HDMI output is driven by a PTN3366 IC that converts the LVDS from the FPGA into a true TMDS signal.
@@ -16,7 +16,7 @@ The VGA, HDMI, input header, and joystick ports are completely buffered to prote
 The HDMI socket is on the back side of the board and allowance must be made for the type of board that is underneath. If there is not a good fit, a spacer board can be added.
 
 ## FPGA logic
-The FPGA logic uses [Matthew Haggerty's F18A core](https://github.com/dnotq/f18a) so that code is compatible with the Z80 Retro! [2068-Z80-TMS9118 project board](https://github.com/Z80-Retro/2068-Z80-TMS9118). 
+The FPGA logic uses [Matthew Hagerty's F18A core](https://github.com/dnotq/f18a) so that code is compatible with the Z80 Retro! [2068-Z80-TMS9118 project board](https://github.com/Z80-Retro/2068-Z80-TMS9118). 
 
 The HDMI logic on the FPGA uses the DVI code design from [Randi Rossi's VicII-Kawari project](https://github.com/randyrossi/vicii-kawari).
 
