@@ -22,12 +22,14 @@ The HDMI logic on the FPGA uses the DVI code design from [Randi Rossi's VicII-Ka
 
 The FPGA image is stored on a 4MByte W25Q32JVSS Flash memory. There is both a SPI and JTAG programming header on the right side of the board. The board may be programmed using an FT232H module with the Efinix Efinity Progrrammer tool, or using another Z80 Retro! add on board, the - ESP32 Interface and Programmer with WiFi board (link coming) which was designed to fit below this one (no HDMI connector fit concerns).
 
+A Trion FPGA with part number T20Q144C3 was used for bringup and testing of FLEADiP rev 0. This was a C3 timing part. A C4 or I4 part is preferred as they provide improved timing margin.
+
 # Z80 I/O Port Addresses
 | I/O Address | Function |
 |-------------|--------|
-| 0x50        | FPGA adress register address |
+| 0x50        | FPGA address register address |
 | 0x51        | FPGA data registers (not all are writable)  |
-| 0x80        |  Video Display Processor |
+| 0x80        | Video Display Processor |
 | 0x81        | Video Display Processor |
 | 0xA8        | Joystick 0 (Z80 Retro! legacy address) |
 | 0xA9        | Joystick 1 (Z80 Retro! legacy address) |
@@ -41,7 +43,7 @@ Full details listed [in the VHDL code](fpga/src/wtm/wtm_z80Interface.vhd)
 | 2       | PLL Lock           | R |
 | 3       | Config switch      | R |
 | 4       | Joystick 0         | R |
-| 5       |  Joystick 1        | R |
-| 6       |  HDMI control      | R/W |
-| 6       |  Interrupt         | R |
+| 5       | Joystick 1         | R |
+| 6       | HDMI control       | R/W |
+| 6       | Interrupt          | R |
 

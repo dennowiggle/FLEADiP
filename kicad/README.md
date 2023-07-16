@@ -68,4 +68,5 @@ This project is an FPGA Logic Engine And Display Processor add-on board that fit
        especially if 5V is expected on a pin other than pin 5.
      - One button Atari 2600 compatible joysticks are supported.
 
+12. The schematic design and BOM uses a T20QFP144 device with C3 timing. It is recommended to switch to a C4 part as it has significantly more timing margin in the logic design. DigiKey part number is 2134-T20Q144C4-ND. An I4 device is also a good choice .
 
