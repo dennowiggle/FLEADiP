@@ -46,7 +46,9 @@ entity wtm_dpram16k is
         data_width      : natural := 8;
         address_width   : natural := 14;
         ram_depth       : natural := 2**address_width;
-        ram_file_name   : string := "init/16KRamZero.txt"
+        -- See "WTM" comments in f18a_cpu.vhd for register setting changes
+        -- dependant on the ram init file used.
+        ram_file_name   : string := "init/16KRamInitZ80RetroLogo.txt"
     );
     port (
         clock       : in  std_logic;

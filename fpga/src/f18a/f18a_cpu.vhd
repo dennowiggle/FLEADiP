@@ -815,26 +815,72 @@ begin
       if rising_edge(clk) then
       if rst_n = '0' or reg50reboot = '1' then
 
+         -- ###############################################################################################
+         -- WTM - Original f18a settings in this section.
+         -- Needs to be combined with 16K ram init file :
+         --    init/16KRamZero.txt for all zero initialisation of ram.
+         --    OR
+         --    16KRamInitF18aScreen.txt for the f18a colour and graphics test screen.
+         -- ###############################################################################################
+         --
+         -- VDP reset clears R0 and R1 (pg 2-5, sec 2.1.7)
+         -- reg0ie1     <= '0';
+         -- reg0m3      <= '0';
+         -- reg0m4      <= '0';
+         -- reg1b       <= '1';
+         -- reg1ie      <= '0';
+         -- reg1m1      <= '0';
+         -- reg1m2      <= '0';
+         -- reg1size    <= '0';
+         -- reg1mag     <= '0';
+         -- reg2        <= x"0";       -- VR2 ntba  @ >0000 for 768 bytes
+         -- reg3        <= x"10";      -- VR3 ctba  @ >0400 for 32 bytes for color sets
+         -- reg4        <= "001";      -- VR4 pgtba @ >0800 for 2K bytes for patterns
+         -- reg5        <= "0001010";  -- VR5 satba @ >0500 for 128 bytes + 32 bytes link table
+         -- reg6        <= "010";      -- VR6 spgba @ >1000 for 2K bytes for patterns
+         -- reg7h       <= x"1";       -- Foreground / text color for text mode, black
+         -- reg7l       <= x"F";       -- Background / border color, white
+
+         -- ###############################################################################################
+         -- WTM settings to display Z80 Retro! logo.
+         -- Needs to be combined with 16K ram init file :
+         --    "init/16KRamInitZ80RetroLogo.txt"
+         -- ###############################################################################################
+         --
+         -- Register settings taken From Z80 assembler source reference:
+         -- https://github.com/Stefanie80/CPM3_2063_Retro/blob/main/Firmware/rom.z80
+         --
+         -- db	00000010b,080h	; R0 = Graphics II, no EXT video
+			-- db	11000000b,081h	; R1 = 16K RAM, enable display, disable INT, 8x8 sprites, mag off
+			-- db	00001110b,082h	; R2 = name table = 0x3800
+			-- db	11111111b,083h	; R3 = name table = 0x2000
+			-- db	00000011b,084h	; R4 = pattern table = 0x0000
+			-- db	01110110b,085h	; R5 = Sprite Attribute table = 0x3B00
+			-- db	00000011b,086h	; R6 = sprite pattern table = 0x1800
+         -- db	01010101b,087h	; R7 = Light Blue Backdrop
+
          -- VDP reset clears R0 and R1 (pg 2-5, sec 2.1.7)
          reg0ie1     <= '0';
-         reg0m3      <= '0';
+         reg0m3      <= '1';        -- Graphics Mode 2
          reg0m4      <= '0';
-         reg1b       <= '1';
+         reg1b       <= '1';        -- Blank = '1' = enable display
          reg1ie      <= '0';
          reg1m1      <= '0';
          reg1m2      <= '0';
-         reg1size    <= '0';
-         reg1mag     <= '0';
-         reg2        <= x"0";       -- VR2 ntba  @ >0000 for 768 bytes
-         reg3        <= x"10";      -- VR3 ctba  @ >0400 for 32 bytes for color sets
-         reg4        <= "001";      -- VR4 pgtba @ >0800 for 2K bytes for patterns
-         reg5        <= "0001010";  -- VR5 satba @ >0500 for 128 bytes + 32 bytes link table
-         reg6        <= "010";      -- VR6 spgba @ >1000 for 2K bytes for patterns
-         -- WTM use white text on black background as preferred state
+         reg1size    <= '0';        -- Sprite Size = '0' = 8x8
+         reg1mag     <= '0';        -- Sprite Magnitude = '0' = off
+         reg2        <= "1110";     -- VR2 = name table = 0x3800
+         reg3        <= x"FF";      -- VR3 = name table = 0x2000
+         reg4        <= "011";      -- VR4 = pattern table = 0x0000
+         reg5        <= "1110110";  -- VR5 = Sprite Attribute table = 0x3B00
+         reg6        <= "011";      -- VR6 = sprite pattern table = 0x1800
          reg7h       <= x"F";       -- Foreground / text color for text mode, white
-         reg7l       <= x"1";       -- Background / border color, black
-         -- reg7h       <= x"1";       -- Foreground / text color for text mode, black
-         -- reg7l       <= x"F";       -- Background / border color, white
+         -- reg7l       <= x"1";       -- Background / border color, black
+         reg7l       <= "0101";     -- Background / border color, Light Blue
+         -- ###############################################################################################
+         -- No WTM changes beyond this point
+         -- ###############################################################################################
+
          -- F18A specific registers
          reg10t2ntba    <= (others => '0');
          reg11t2ctba    <= (others => '0');
