@@ -172,6 +172,7 @@ architecture rtl of top is
     signal rst_n                : std_logic;
     -- Synchronized to clk_in_z80_10
     signal rst_z80_10_n         : std_logic;
+    signal rst_vdp_n            : std_logic;
     -- Sychronized to clk_250
     signal rst_250              : std_logic;
 
@@ -275,11 +276,19 @@ begin
        rst_out_n   => rst_z80_10_n
     );
 
+    -- Synchronize the VDP logic reset to pixel clock
+    SYNC_VDP_RESET_TO_CLK_25 : entity work.wtm_resetSync(rtl)
+    port map(
+       clock       => clk_25, 
+       rst_n       => rst_z80_10_n and clk_vdp_lock,
+       rst_out_n   => rst_vdp_n
+    );
+
     -- Synchronize the DVI logic reset to the pixel x10 clock
-    SYNC_RESET_TO_CLK_250 : entity work.wtm_resetSync(rtl)
+    SYNC_DVI_RESET_TO_CLK_250 : entity work.wtm_resetSync(rtl)
     port map(
        clock       => clk_250, 
-       rst_n       => not rst_z80_10_n,
+       rst_n       => not (rst_z80_10_n and clk_vdp_lock),
        rst_out_n   => rst_250
     );
 
@@ -380,7 +389,7 @@ begin
         clk_25m0_s     => clk_25,
   
         -- 9918A to Host interface
-        reset_n_net    => rst_z80_10_n,
+        reset_n_net    => rst_vdp_n,
         mode_net       => vdp_mode,
         csw_n_net      => vdp_write_n,
         csr_n_net      => vdp_read_n,
